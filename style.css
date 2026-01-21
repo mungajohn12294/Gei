@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow:  0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom:  5px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.main-content {
+    display: flex;
+    flex:  1;
+    gap: 20px;
+    padding: 20px;
+    overflow:  hidden;
+}
+
+.map-container {
+    flex: 2;
+    border-radius: 10px;
+    box-shadow:  0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.info-panel {
+    flex: 1;
+    background:  #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panel-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom:  1px solid #dee2e6;
+}
+
+. panel-section:last-child {
+    border-bottom: none;
+}
+
+.panel-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.panel-section h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+.info-item span {
+    font-weight: 700;
+    color: #667eea;
+    font-size:  13px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:  all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-danger {
+    background: #ff6b6b;
+    color:  white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: #ff5252;
+}
+
+. btn-danger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #868e96;
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(134, 142, 150, 0.4);
+    background: #748087;
+}
+
+.status {
+    background: #e7f3ff;
+    padding:  15px;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.status-text {
+    color: #0066cc;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.distance-text {
+    font-size: 24px;
+    font-weight:  700;
+    color: #667eea;
+}
+
+/* Scrollbar styling */
+. info-panel: :-webkit-scrollbar {
+    width: 8px;
+}
+
+.info-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.info-panel::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.info-panel::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .map-container {
+        flex: 1;
+        min-height: 300px;
+    }
+
+    . info-panel {
+        flex: 1;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+}
